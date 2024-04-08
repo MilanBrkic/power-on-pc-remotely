@@ -12,6 +12,10 @@ app.post("/power-on", (req, res) => {
   powerOnPc(60);
   res.send("PC powered on");
 });
+
+app.get("/health", (req, res) => {
+  res.send("Cao");
+});
 // Start the server
 app.listen(port, () => {
   console.log(`Frontend server is listening at http://localhost:${port}`);
