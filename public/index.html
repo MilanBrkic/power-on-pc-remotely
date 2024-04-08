@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Basic HTML Page</title>
+</head>
+<body>
+  <h1>Hello, World!</h1>
+  <p>This is a basic HTML page served by Express.</p>
+  <!-- Add a button to trigger the POST request -->
+  <button onclick="powerOn()">Power On PC</button>
+  <script>
+    function powerOn() {
+      fetch('/power-on', {
+        method: 'POST'
+      })
+      .then(response => response.text())
+      .then(data => console.log(data)) // Log the response from the server
+      .catch(error => console.error('Error:', error));
+    }
+  </script>
+</body>
+</html>
